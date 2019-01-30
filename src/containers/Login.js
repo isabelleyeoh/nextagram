@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Form, Label, Input } from 'reactstrap';
 import axios from 'axios';
-
-
+import MyProfilePage from '../pages/MyProfilePage'
 
 class Login extends React.Component { 
 
@@ -37,6 +36,7 @@ class Login extends React.Component {
         
         this.props.toggle();
         window.alert (this.state.response)
+
     })
     .catch(error => {
         // If unsuccessful, we notify users what went wrong
@@ -49,8 +49,12 @@ class Login extends React.Component {
 
   }
 
- 
-
+  loginSuccessful = () => {
+      this.setState ({
+        statusLogin: !this.state.statusLogin
+      })
+      
+  }
 
   handleChange = (e) => {
   
@@ -71,8 +75,6 @@ class Login extends React.Component {
 
 
     return (
-
-
 
         <Modal isOpen={!showSignup} toggle={toggle}>
           <ModalHeader toggle={toggle}>Log in</ModalHeader>

@@ -48,7 +48,7 @@ export default class NavBar extends React.Component {
               <Link to="/">Home</Link>
               </NavItem>
               <NavItem className='mr-3'>
-              <Link to={`/users/1`}>My Profile</Link> 
+              <Link to="/profile">My Profile</Link> 
               </NavItem>
             {  localStorage.getItem("jwt")?
               <NavItem className='mr-3'>

@@ -5,6 +5,7 @@ import { Route, Link } from "react-router-dom"
 import UserProfilePage from './pages/UserProfilePage';
 import './App.css';
 import Navbar from './components/Navbar'
+import MyProfilePage from './pages/MyProfilePage';
 
 
 // import Loader from './components/Loader';
@@ -76,7 +77,7 @@ render(){
     <Route exact path="/" component={props => <Homepage users={users} isLoading={isLoading} {...props}/>} />
     {/* passing props using a function */}
     <Route path={`/users/:id`} component={props => <UserProfilePage users={users} {...props} />} />
-    {/* <Route exact path="/profile" component={props => <MyProfilePage users={users} {...props} />}/> */}
+    <Route exact path="/profile" component={props => <MyProfilePage/>}/>
   </div>
 
 
